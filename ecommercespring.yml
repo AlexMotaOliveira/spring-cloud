@@ -1,7 +1,7 @@
 #porta Http em uso
 server.port=8081
 # perfil ativo
-
+spring.profiles.active=dev
 # configuração JPA
 spring.jpa.open-in-view=true
 
