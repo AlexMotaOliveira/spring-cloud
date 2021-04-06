@@ -1,16 +1,18 @@
 server:
-  port: 8083
-eureka: 
+  port:
+    8880
+
+eureka:
   instance: 
     hostname: localhost
+    port: 9000
   client:
     registerWithEureka: true
     fetchRegistry: false
-    serviceUrl: 
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  server:
-    wait-time-in-ms-when-sync-empty: 3000
-    eviction-interval-timer-in-ms: 1000
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+    server:
+      wait-time-in-ms-when-sync-empty: 3000 
 
 security:
     oauth2:
