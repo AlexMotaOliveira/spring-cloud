@@ -11,18 +11,6 @@ eureka:
       wait-time-in-ms-when-sync-empty: 3000
 
 spring:
-    datasource:
-      initialization-mode: always
-      sql-script-encoding: UTF-8
-      password: '123456'
-      url: jdbc:mysql://localhost:3306/ecommerce?createDatabaseIfNotExist=true&serverTimezone=UTC
-      username: root
-    jpa:
-      database-platform: org.hibernate.dialect.MySQL55Dialect
-      generate-ddl: true
-      hibernate:
-        ddl-auto: update
-      show-sql: true
   cloud:
     gateway:
       discovery:
@@ -38,4 +26,15 @@ spring:
           uri: lb://SHOPPING-CART
           predicates:
             - Path=/cart/**
-
+  datasource:
+      initialization-mode: always
+      sql-script-encoding: UTF-8
+      password: '123456'
+      url: jdbc:mysql://localhost:3306/ecommerce?createDatabaseIfNotExist=true&serverTimezone=UTC
+      username: root
+    jpa:
+      database-platform: org.hibernate.dialect.MySQL55Dialect
+      generate-ddl: true
+      hibernate:
+        ddl-auto: update
+      show-sql: true
