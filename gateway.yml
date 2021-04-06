@@ -9,25 +9,8 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
     server:
       wait-time-in-ms-when-sync-empty: 3000 
-
-spring:
-  cloud:
-    gateway:    
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-      routes:
-        - id: ecommercespring
-          uri: lb://ECOMMERCESPRING
-          predicates:
-            - Path=/USUARIO/**
-        - id: shopping-cart
-          uri: lb://SHOPPING-CART
-          predicates:
-            - Path=/cart/**
-            
-security:
+      
+    security:
     oauth2:
         client:
             access-token-validity-seconds: 1800
@@ -50,3 +33,19 @@ spring:
         hibernate:
             ddl-auto: update
         show-sql: true
+  cloud:
+    gateway:    
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: ecommercespring
+          uri: lb://ECOMMERCESPRING
+          predicates:
+            - Path=/USUARIO/**
+        - id: shopping-cart
+          uri: lb://SHOPPING-CART
+          predicates:
+            - Path=/cart/**
+            
