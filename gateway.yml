@@ -21,8 +21,8 @@ spring:
         - id: order-service
           uri: lb://ORDER-SERVICE
           predicates:
-            - Path=/carrinho/**,/compraprodutos/**,/vendaprodutos/**
+            - Path=/carrinho/**
         - id: ecommercespring
           uri: lb://ECOMMERCESPRING
           predicates:
-            - Path=/usuarios/**,/marcas/**,/categorias/**,/produtos/**
+            - Path=/usuarios/**,/marcas/**,/categorias/**,/produtos/**,/compraprodutos/**,/vendaprodutos/**
