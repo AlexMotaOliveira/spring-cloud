@@ -25,4 +25,4 @@ spring:
         - id: ecommercespring
           uri: lb://ECOMMERCESPRING
           predicates:
-            - Path=/usuarios/**,/marcas/**,/categorias/**,/produtos/**,/compraprodutos/**,/vendaprodutos/**
+            - Path=/usuarios/**,/marcas/**,/categorias/**,/produtos/**,/compraprodutos/**,/vendaprodutos/**,/**
